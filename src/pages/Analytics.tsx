@@ -1,30 +1,20 @@
-import React from "react";
-import {
-  LineChart,
-  Line,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from "recharts";
-import { Battery, Zap, Wrench, TrendingUp } from "lucide-react";
+import React from 'react';
+import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { Battery, Zap, Wrench, TrendingUp } from 'lucide-react';
 
 const performanceData = [
-  { month: "Jan", efficiency: 85, maintenance: 12, cost: 45000 },
-  { month: "Feb", efficiency: 87, maintenance: 8, cost: 42000 },
-  { month: "Mar", efficiency: 86, maintenance: 15, cost: 48000 },
-  { month: "Apr", efficiency: 89, maintenance: 10, cost: 44000 },
-  { month: "May", efficiency: 84, maintenance: 14, cost: 46000 },
-  { month: "Jun", efficiency: 88, maintenance: 9, cost: 43000 },
+  { month: 'Jan', efficiency: 85, maintenance: 12, cost: 45000 },
+  { month: 'Feb', efficiency: 87, maintenance: 8, cost: 42000 },
+  { month: 'Mar', efficiency: 86, maintenance: 15, cost: 48000 },
+  { month: 'Apr', efficiency: 89, maintenance: 10, cost: 44000 },
+  { month: 'May', efficiency: 84, maintenance: 14, cost: 46000 },
+  { month: 'Jun', efficiency: 88, maintenance: 9, cost: 43000 }
 ];
 
 const assetTypePerformance = [
-  { type: "Power Plants", avgEfficiency: 88, totalAssets: 3 },
-  { type: "Water Facilities", avgEfficiency: 85, totalAssets: 3 },
-  { type: "Industrial", avgEfficiency: 82, totalAssets: 3 },
+  { type: 'Power Plants', avgEfficiency: 88, totalAssets: 3 },
+  { type: 'Water Facilities', avgEfficiency: 85, totalAssets: 3 },
+  { type: 'Industrial', avgEfficiency: 82, totalAssets: 3 }
 ];
 
 const Analytics = () => {
@@ -32,9 +22,7 @@ const Analytics = () => {
     <div className="p-6">
       <div className="mb-6">
         <h2 className="text-xl font-semibold">Analytics Dashboard</h2>
-        <p className="text-gray-600">
-          Comprehensive analysis of infrastructure performance
-        </p>
+        <p className="text-gray-600">Comprehensive analysis of infrastructure performance</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
@@ -78,88 +66,52 @@ const Analytics = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-white p-4 rounded-lg shadow">
           <h3 className="font-semibold mb-4">Performance Trends</h3>
-          <LineChart
-            width={500}
-            height={300}
-            data={performanceData}
-            margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
-          >
+          <LineChart width={500} height={300} data={performanceData}
+            margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="month" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line
-              type="monotone"
-              dataKey="efficiency"
-              stroke="#3b82f6"
-              name="Efficiency %"
-            />
-            <Line
-              type="monotone"
-              dataKey="maintenance"
-              stroke="#ef4444"
-              name="Maintenance Events"
-            />
+            <Line type="monotone" dataKey="efficiency" stroke="#3b82f6" name="Efficiency %" />
+            <Line type="monotone" dataKey="maintenance" stroke="#ef4444" name="Maintenance Events" />
           </LineChart>
         </div>
 
         <div className="bg-white p-4 rounded-lg shadow">
           <h3 className="font-semibold mb-4">Asset Type Performance</h3>
-          <BarChart
-            width={500}
-            height={300}
-            data={assetTypePerformance}
-            margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
-          >
+          <BarChart width={500} height={300} data={assetTypePerformance}
+            margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="type" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar
-              dataKey="avgEfficiency"
-              fill="#3b82f6"
-              name="Avg. Efficiency %"
-            />
+            <Bar dataKey="avgEfficiency" fill="#3b82f6" name="Avg. Efficiency %" />
             <Bar dataKey="totalAssets" fill="#10b981" name="Total Assets" />
           </BarChart>
         </div>
 
         <div className="bg-white p-4 rounded-lg shadow">
           <h3 className="font-semibold mb-4">Monthly Operating Costs</h3>
-          <LineChart
-            width={500}
-            height={300}
-            data={performanceData}
-            margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
-          >
+          <LineChart width={500} height={300} data={performanceData}
+            margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="month" />
             <YAxis />
             <Tooltip />
-            <Line
-              type="monotone"
-              dataKey="cost"
-              stroke="#6366f1"
-              name="Cost ($)"
-            />
+            <Line type="monotone" dataKey="cost" stroke="#6366f1" name="Cost ($)" />
           </LineChart>
         </div>
 
         <div className="bg-white p-4 rounded-lg shadow">
           <h3 className="font-semibold mb-4">Regional Performance</h3>
-          <BarChart
-            width={500}
-            height={300}
-            data={[
-              { region: "West", efficiency: 89 },
-              { region: "Midwest", efficiency: 86 },
-              { region: "South", efficiency: 84 },
-              { region: "Northeast", efficiency: 87 },
-            ]}
-            margin={{ top: 19, right: 30, left: 20, bottom: 20 }}
-          >
+          <BarChart width={500} height={300} data={[
+            { region: 'West', efficiency: 89 },
+            { region: 'Midwest', efficiency: 86 },
+            { region: 'South', efficiency: 84 },
+            { region: 'Northeast', efficiency: 87 }
+          ]} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="region" />
             <YAxis />
