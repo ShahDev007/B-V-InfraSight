@@ -22,6 +22,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: |
-          ${{ secrets.DOCKERHUB_USERNAME }}/bv-infrasight:latest
-          ${{ secrets.DOCKERHUB_USERNAME }}/bv-infrasight:${{ github.sha }}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/bv-infrasight:latest
