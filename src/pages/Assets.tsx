@@ -232,16 +232,16 @@ const DetailModal: React.FC<DetailModalProps> = ({ asset, onClose }) => {
                 width={350}
                 height={300}
                 data={asset.details.performanceHistory}
-                margin={{ top: 20, bottom: 20 }} // Added proper margins
+                margin={{ top: 20, bottom: 20 }} 
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis
                   dataKey="date"
-                  padding={{ left: 30, right: 30 }} // Added padding
+                  padding={{ left: 30, right: 30 }} 
                 />
                 <YAxis
-                  domain={[0, 100]} // Fixed Y-axis scale
-                  ticks={[0, 25, 50, 75, 100]} // Explicit ticks
+                  domain={[0, 100]} 
+                  ticks={[0, 25, 50, 75, 100]} 
                 />
                 <Tooltip />
                 <Line
@@ -249,7 +249,7 @@ const DetailModal: React.FC<DetailModalProps> = ({ asset, onClose }) => {
                   dataKey="efficiency"
                   stroke="#3b82f6"
                   name="Efficiency"
-                  dot={{ r: 4 }} // Made dots more visible
+                  dot={{ r: 4 }} 
                 />
                 <Line
                   type="monotone"

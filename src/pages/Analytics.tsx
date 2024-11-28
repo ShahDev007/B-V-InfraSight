@@ -25,7 +25,6 @@ const Analytics = () => {
         <p className="text-gray-600">Comprehensive analysis of infrastructure performance</p>
       </div>
 
-      {/* Overview Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className="bg-white p-4 rounded-lg shadow">
           <div className="flex items-center gap-2 mb-2">
@@ -64,9 +63,7 @@ const Analytics = () => {
         </div>
       </div>
 
-      {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Performance Trends */}
         <div className="bg-white p-4 rounded-lg shadow">
           <h3 className="font-semibold mb-4">Performance Trends</h3>
           <LineChart width={500} height={300} data={performanceData}
@@ -81,7 +78,6 @@ const Analytics = () => {
           </LineChart>
         </div>
 
-        {/* Asset Type Performance */}
         <div className="bg-white p-4 rounded-lg shadow">
           <h3 className="font-semibold mb-4">Asset Type Performance</h3>
           <BarChart width={500} height={300} data={assetTypePerformance}
@@ -96,7 +92,6 @@ const Analytics = () => {
           </BarChart>
         </div>
 
-        {/* Cost Analysis */}
         <div className="bg-white p-4 rounded-lg shadow">
           <h3 className="font-semibold mb-4">Monthly Operating Costs</h3>
           <LineChart width={500} height={300} data={performanceData}
@@ -109,7 +104,6 @@ const Analytics = () => {
           </LineChart>
         </div>
 
-        {/* Efficiency Distribution */}
         <div className="bg-white p-4 rounded-lg shadow">
           <h3 className="font-semibold mb-4">Regional Performance</h3>
           <BarChart width={500} height={300} data={[
